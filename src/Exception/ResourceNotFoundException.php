@@ -6,4 +6,5 @@ namespace LemonSqueezy\Exception;
 
 class ResourceNotFoundException extends RuntimeException
 {
+    protected $message = 'The record you are looking it doesn\'t exist.';
 }

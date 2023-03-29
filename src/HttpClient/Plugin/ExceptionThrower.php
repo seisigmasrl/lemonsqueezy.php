@@ -7,10 +7,14 @@ namespace LemonSqueezy\HttpClient\Plugin;
 use Http\Client\Common\Plugin;
 use Http\Promise\Promise;
 use LemonSqueezy\Exception\ApiLimitExceededException;
+use LemonSqueezy\Exception\CannotProcessRecordException;
 use LemonSqueezy\Exception\ExceptionInterface;
+use LemonSqueezy\Exception\HiddenRecordException;
+use LemonSqueezy\Exception\InvalidMethodException;
 use LemonSqueezy\Exception\ResourceNotFoundException;
 use LemonSqueezy\Exception\RuntimeException;
 use LemonSqueezy\Exception\ValidationFailedException;
+use LemonSqueezy\Exception\UnauthorizedPermissionException;
 use LemonSqueezy\HttpClient\Message\ResponseMediator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -36,9 +40,13 @@ final class ExceptionThrower implements Plugin
     private static function createException(int $status, string $message): ExceptionInterface
     {
         return match ($status) {
-            400, 422 => new ValidationFailedException($message, $status),
-            429 => new ApiLimitExceededException($message, $status),
+            400 => new ValidationFailedException($message, $status),
+            401 => new UnauthorizedPermissionException($message, $status),
+            403 => new HiddenRecordException($message, $status),
             404 => new ResourceNotFoundException($message, $status),
+            405 => new InvalidMethodException($message, $status),
+            422 => new CannotProcessRecordException($message, $status),
+            429 => new ApiLimitExceededException($message, $status),
             default => new RuntimeException($message, $status),
         };
     }
