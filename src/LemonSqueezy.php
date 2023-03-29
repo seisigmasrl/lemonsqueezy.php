@@ -10,6 +10,7 @@ use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Client\Common\Plugin\HistoryPlugin;
 use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
+use LemonSqueezy\API\User;
 use LemonSqueezy\HttpClient\Builder;
 use LemonSqueezy\HttpClient\Plugin\Authentication;
 use LemonSqueezy\HttpClient\Plugin\ExceptionThrower;
@@ -20,7 +21,6 @@ use Psr\Http\Message\ResponseInterface;
 class LemonSqueezy
 {
     private const BASE_URL = 'https://api.lemonsqueezy.com';
-    private const API_VERSION = '/v1';
     private const API_ACCEPT = 'application/vnd.api+json';
     private const API_CONTENT_TYPE = 'application/vnd.api+json';
     private $httpClientBuilder;
@@ -47,6 +47,11 @@ class LemonSqueezy
     {
         $builder = new Builder($httpClient);
         return new self($builder);
+    }
+
+    public function user(): User
+    {
+        return new User($this);
     }
 
     public function authenticate(string $apiKey): void
