@@ -10,10 +10,7 @@ it('test create client', function () {
 
     $account = $client->user();
     $accountDetails = $account->getUserInformation();
-    ray($accountDetails);
-
     $accountId = $account->getUserId();
-    ray($accountId);
 
     expect($client)
         ->toBeInstanceOf(LemonSqueezy::class)
