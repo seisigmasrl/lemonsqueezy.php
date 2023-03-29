@@ -1,46 +1,58 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "ricardov03/lemonsqueezy-php",
+    "description": "Lemon Squeezy API client for PHP",
     "keywords": [
-        ":vendor_name",
-        ":package_slug"
+        "ricardov03",
+        "lemonsqueezy-php"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/ricardov03/lemonsqueezy-php",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Ricardo Vargas",
+            "email": "im@ricardovargas.me",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1"
+        "php": "^8.2",
+        "ext-json": "*",
+        "nyholm/psr7": "^1.5",
+        "php-http/client-common": "^2.6",
+        "php-http/discovery": "^1.15",
+        "php-http/httplug": "^2.3",
+        "psr/http-client-implementation": "*",
+        "psr/http-factory-implementation": "*",
+        "psr/http-message": "^1.0",
+        "symfony/http-client": "^6.2",
+        "symfony/polyfill-php82": "^1.27"
     },
     "require-dev": {
-        :require_dev_testing,
-        :require_dev_codestyle,
+        "pestphp/pest": "^1.20",
+        "friendsofphp/php-cs-fixer": "^3.13",
         "spatie/ray": "^1.28"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "LemonSqueezy\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "LemonSqueezy\\LemonSqueezy\\Tests\\": "tests"
         }
     },
     "scripts": {
-        :scripts_testing,
-        :scripts_codestyle
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            :plugins_testing,
-            "phpstan/extension-installer": true
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     },
     "minimum-stability": "dev",
