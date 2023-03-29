@@ -11,11 +11,14 @@ class User extends AbstractApi
     public function getUserId(): int
     {
         $account = $this->get('/users/me');
+
         return (int) $account->data->id;
     }
+
     public function getUserInformation(): UserEntity
     {
         $account = $this->get('/users/me');
+
         return new UserEntity($account->data->attributes);
     }
 }

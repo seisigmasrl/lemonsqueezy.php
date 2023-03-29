@@ -4,18 +4,21 @@ declare(strict_types=1);
 
 namespace LemonSqueezy\HttpClient\Util;
 
+use function get_debug_type;
 use function json_decode;
 use function json_encode;
+
+use const JSON_ERROR_NONE;
+
 use function json_last_error;
+
 use function json_last_error_msg;
-use function get_debug_type;
 
 use LemonSqueezy\Exception\RuntimeException;
 
 use function sprintf;
 
 use stdClass;
-use const JSON_ERROR_NONE;
 
 final class JsonObject
 {

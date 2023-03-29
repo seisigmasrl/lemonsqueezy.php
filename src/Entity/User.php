@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace LemonSqueezy\Entity;
 
-use DateTime;
-
 final class User extends AbstractEntity
 {
     public string $name;

@@ -4,18 +4,22 @@ declare(strict_types=1);
 
 namespace LemonSqueezy\HttpClient\Message;
 
+use function array_filter;
+use function array_shift;
+use function get_object_vars;
+use function is_null;
+use function is_object;
+use function is_string;
+
 use LemonSqueezy\Exception\RuntimeException;
 use LemonSqueezy\HttpClient\Util\JsonObject;
 use Psr\Http\Message\ResponseInterface;
-use stdClass;
-use function str_starts_with;
+
 use function sprintf;
-use function is_string;
-use function is_object;
-use function array_filter;
-use function get_object_vars;
-use function is_null;
-use function array_shift;
+
+use stdClass;
+
+use function str_starts_with;
 
 final class ResponseMediator
 {

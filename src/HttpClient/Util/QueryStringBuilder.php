@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace LemonSqueezy\HttpClient\Util;
 
 use function count;
-use function sprintf;
+
 use const PHP_QUERY_RFC3986;
+
+use function sprintf;
 
 final class QueryStringBuilder
 {

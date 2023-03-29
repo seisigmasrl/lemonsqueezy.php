@@ -46,6 +46,7 @@ class LemonSqueezy
     public static function createWithHttpClient(ClientInterface $httpClient): self
     {
         $builder = new Builder($httpClient);
+
         return new self($builder);
     }
 
