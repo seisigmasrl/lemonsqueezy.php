@@ -26,8 +26,8 @@ abstract class AbstractApi
 {
     private const URL_PREFIX = '/v1';
     private LemonSqueezy $client;
-    private ?int $perPage;
-    private ?int $page;
+    private ?int $perPage = null;
+    private ?int $page = null;
 
     public function __construct(LemonSqueezy $client)
     {
@@ -36,15 +36,16 @@ abstract class AbstractApi
 
     public function get(string $uri, array $params = [], array $headers = []): stdClass
     {
-        if (! is_null($this->perPage) && ! isset($params['per_page'])) {
-            $params = array_merge(['per_page' => $this->perPage], $params);
+        if (! is_null($this->perPage) && ! isset($params['page[size]'])) {
+            $params = array_merge(['page[size]' => $this->perPage], $params);
         }
 
-        if (! is_null($this->page) && ! isset($params['page'])) {
-            $params = array_merge(['page' => $this->page], $params);
+        if (! is_null($this->page) && ! isset($params['page[number]'])) {
+            $params = array_merge(['page[number]' => $this->page], $params);
         }
 
         $response = $this->client->getHttpClient()->get(self::prepareUri($uri, $params), $headers);
+        ray($response);
 
         return ResponseMediator::getContent($response);
     }

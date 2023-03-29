@@ -20,7 +20,7 @@ use function array_shift;
 final class ResponseMediator
 {
     public const CONTENT_TYPE_HEADER = 'Content-Type';
-    public const JSON_CONTENT_TYPE = 'application/json';
+    public const JSON_CONTENT_TYPE = 'application/vnd.api+json';
 
     public static function getContent(ResponseInterface $response): stdClass
     {

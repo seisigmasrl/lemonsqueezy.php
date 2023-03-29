@@ -28,7 +28,7 @@
         "symfony/polyfill-php82": "^1.27"
     },
     "require-dev": {
-        "pestphp/pest": "^1.20",
+        "pestphp/pest": "^2.0",
         "friendsofphp/php-cs-fixer": "^3.13",
         "spatie/ray": "^1.28"
     },

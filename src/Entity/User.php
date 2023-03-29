@@ -13,6 +13,6 @@ final class User extends AbstractEntity
     public string $color;
     public string $avatar_url;
     public bool $has_custom_avatar;
-    public DateTime $created_at;
-    public DateTime $updated_at;
+    public string $createdAt;
+    public string $updatedAt;
 }
