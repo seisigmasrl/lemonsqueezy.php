@@ -6,5 +6,5 @@ All notable changes to `LemonSqueeze.php` will be documented in this file.
 
 - Initial release.
 - Including HttpClient.
-- Adding the User endpoint methods from the Lemon Squeeze oficial API.
+- Adding the User endpoint methods from the Lemon Squeeze official API.
 
