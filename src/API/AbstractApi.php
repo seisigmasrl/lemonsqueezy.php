@@ -45,7 +45,6 @@ abstract class AbstractApi
         }
 
         $response = $this->client->getHttpClient()->get(self::prepareUri($uri, $params), $headers);
-        ray($response);
 
         return ResponseMediator::getContent($response);
     }
