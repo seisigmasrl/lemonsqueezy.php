@@ -1,7 +1,7 @@
 # Lemon Squeezy API client for PHP
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/seisigmasrl/lemonsqueezy-php.svg?style=flat-square)](https://packagist.org/packages/ricardov03/lemonsqueezy-php)
-[![Tests](https://img.shields.io/github/actions/workflow/status/seisigmasrl/lemonsqueezy-php/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ricardov03/lemonsqueezy-php/actions/workflows/run-tests.yml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/seisigmasrl/lemonsqueezy.php/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/seisigmasrl/lemonsqueezy.php/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/seisigmasrl/lemonsqueezy-php.svg?style=flat-square)](https://packagist.org/packages/ricardov03/lemonsqueezy-php)
 
 I love the competition that came from innovation. For businesses and creators worldwide, being able to charge for services is one of the most needed requirements in this global world. Sadly, few companies can bring this kind of solution. Lemon Squeeze brings payments, tax & subscriptions for software companies by being your merchant of record, handling the tax compliance burden so you can focus on more revenue and less headache.
