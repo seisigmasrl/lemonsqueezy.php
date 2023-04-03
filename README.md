@@ -51,6 +51,7 @@ $userDetails = $user->getUserInformation();
 
 var_dump($userDetails);
 // object(LemonSqueezy\Entity\User)#4567 (7) {
+//   ["id"]=> id(5) "13546"   // New
 //   ["name"]=> string(14) "Marco Polo"
 //   ["email"]=> string(19) "marco@polo.com"
 //   ["color"]=> string(7) "#7047EB"
@@ -61,10 +62,32 @@ var_dump($userDetails);
 // }
 
 // Get only the ID of the User
-$userId = $user->getUserId();
+// $userId = $user->getUserId(); Deprecated.
+```
 
-var_dump($userId);
-// int(350103)
+### Store
+```php
+<?php
+# Initialize the Package from the step before
+...
+// Get the user information base on the defined in the Lemon Squeeze API Documentation
+// https://docs.lemonsqueezy.com/api/stores#the-store-object
+$lemonSqueeze = $client->store();
+$storeList = $lemonSqueeze->getAllStores();     // List all existing Stores
+$store = $lemonSqueeze->getStore(12685);        // Get details of the store with the ID: 12685
+```
+
+### Customer
+```php
+<?php
+# Initialize the Package from the step before
+...
+// Get the user information base on the defined in the Lemon Squeeze API Documentation
+// https://docs.lemonsqueezy.com/api/customers#the-customer-object
+$lemonSqueeze = $client->customer();
+$allCustomers = $lemonSqueeze->getAllCustomers();           // List all existing customers
+$storeCustomers = $lemonSqueeze->getStoreCustomers(12689);  // List all customers from the Store ID: 12689
+$customer = $lemonSqueeze->getCustomer(596510);             // Get the details of the Customer with the ID: 596510
 ```
 
 
@@ -79,12 +102,13 @@ var_dump($userId);
 - [x] Users
     - [x] Retrieve Authenticated User Information
     - [x] Retrieve logged User's Id
-- [ ] Stores
-    - [ ] List all Stores
-    - [ ] Retrieve Store
-- [ ] Customers
-    - [ ] List all Customers
-    - [ ] Retrieve a Customer
+- [x] Stores
+    - [x] List all Stores
+    - [x] Retrieve Store
+- [x] Customers
+    - [x] List all Customers
+    - [x] List all Customers from a Store
+    - [x] Retrieve a Customer
 - [ ] Products
     - [ ] List all products
     - [ ] Retrieve a Product
