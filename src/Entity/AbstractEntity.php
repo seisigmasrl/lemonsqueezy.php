@@ -82,7 +82,7 @@ abstract class AbstractEntity
     public function build(array $parameters): void
     {
         foreach ($parameters as $property => $value) {
-//            $property = static::convertToCamelCase($property);
+            //            $property = static::convertToCamelCase($property);
 
             if (property_exists($this, $property)) {
                 $this->$property = match ($property) {

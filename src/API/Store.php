@@ -17,6 +17,7 @@ class Store extends AbstractApi
         return array_map(function ($store) {
             $storeEntity = new StoreEntity($store->attributes);
             $storeEntity->id = (int) $store->id;
+
             return $storeEntity;
         }, $stores->data);
     }
@@ -27,6 +28,7 @@ class Store extends AbstractApi
 
         $storeEntity = new StoreEntity($store->data->attributes);
         $storeEntity->id = (int) $store->data->id;
+
         return $storeEntity;
     }
 }

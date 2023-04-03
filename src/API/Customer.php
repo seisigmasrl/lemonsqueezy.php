@@ -15,6 +15,7 @@ class Customer extends AbstractApi
         return array_map(function ($customer) {
             $customerEntity = new CustomerEntity($customer->attributes);
             $customerEntity->id = (int) $customer->id;
+
             return $customerEntity;
         }, $customers->data);
     }
@@ -26,6 +27,7 @@ class Customer extends AbstractApi
         return array_map(function ($customer) {
             $customerEntity = new CustomerEntity($customer->attributes);
             $customerEntity->id = (int) $customer->id;
+
             return $customerEntity;
         }, $customers->data);
     }
@@ -36,6 +38,7 @@ class Customer extends AbstractApi
 
         $customerEntity = new CustomerEntity($customer->data->attributes);
         $customerEntity->id = (int) $customer->data->id;
+
         return $customerEntity;
     }
 }
