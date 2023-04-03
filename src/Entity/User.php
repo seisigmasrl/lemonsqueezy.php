@@ -6,6 +6,7 @@ namespace LemonSqueezy\Entity;
 
 final class User extends AbstractEntity
 {
+    public int $id;
     public string $name;
     public string $email;
     public string $color;
