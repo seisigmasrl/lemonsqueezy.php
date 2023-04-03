@@ -7,6 +7,7 @@ namespace LemonSqueezy\Entity;
 use function date_default_timezone_get;
 
 use DateTime;
+
 use DateTimeZone;
 
 use function debug_backtrace;
@@ -16,11 +17,13 @@ use const E_USER_NOTICE;
 use Exception;
 
 use function get_object_vars;
+
 use function implode;
 use function is_null;
 use function is_object;
-
 use function lcfirst;
+
+use LemonSqueezy\Enum\CustomerStatusEnum;
 
 use LemonSqueezy\Exception\RuntimeException;
 
@@ -82,7 +85,13 @@ abstract class AbstractEntity
 //            $property = static::convertToCamelCase($property);
 
             if (property_exists($this, $property)) {
-                $this->$property = $value;
+                $this->$property = match ($property) {
+                    'status' => match (get_class($this)) {
+                        Customer::class => CustomerStatusEnum::from($value),
+                        default => null,
+                    },
+                    default => $value,
+                };
             }
         }
     }

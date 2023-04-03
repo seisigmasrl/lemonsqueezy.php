@@ -10,6 +10,7 @@ use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Client\Common\Plugin\HistoryPlugin;
 use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
+use LemonSqueezy\API\Customer;
 use LemonSqueezy\API\Store;
 use LemonSqueezy\API\User;
 use LemonSqueezy\HttpClient\Builder;
@@ -59,6 +60,11 @@ class LemonSqueezy
     public function store(): Store
     {
         return new Store($this);
+    }
+
+    public function customer(): Customer
+    {
+        return new Customer($this);
     }
 
     public function authenticate(string $apiKey): void
