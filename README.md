@@ -85,35 +85,51 @@ $store = $lemonSqueeze->getStore(12685);        // Get details of the store with
 // Get the user information base on the defined in the Lemon Squeeze API Documentation
 // https://docs.lemonsqueezy.com/api/customers#the-customer-object
 $lemonSqueeze = $client->customer();
-$allCustomers = $lemonSqueeze->getAllCustomers();           // List all existing customers
+$allCustomers = $lemonSqueeze->getAllCustomers();           // List all existing Customers
 $storeCustomers = $lemonSqueeze->getStoreCustomers(12689);  // List all customers from the Store ID: 12689
 $customer = $lemonSqueeze->getCustomer(596510);             // Get the details of the Customer with the ID: 596510
+```
+
+### Product
+```php
+<?php
+# Initialize the Package from the step before
+...
+// Get the user information base on the defined in the Lemon Squeeze API Documentation
+// https://docs.lemonsqueezy.com/api/products#the-product-object
+$lemonSqueeze = $client->product();
+$allProducts = $lemonSqueeze->getAllProducts();                      // List all existing Products
+$storeCustomers = $lemonSqueeze->getStoreProducts(12689);            // List all Products from the Store ID: 12689
+$product = $lemonSqueeze->getProduct(59920);                         // Get the details of the Products with the ID: 59920
+$productVariants = $lemonSqueeze->getProductVariants(59920);         // Get all Variants from the Product ID: 59920
+$productWithVariants = $lemonSqueeze->getProductWithVariants(59920); // Get a Product with All their Variants
 ```
 
 
 ## Roadmap / To-Do
 - [ ] General
-    - [x] Authentication
-        - [x] Rate Limiting
-        - [x] Errors (Exceptions)
+    - [x] Authentication - v.1.0.0
+        - [x] Rate Limiting - v.1.0.0
+        - [x] Errors (Exceptions) - v.1.0.0
         - [ ] Pagination - WIP
     - [ ] Related Resources
     - [ ] Filtering
-- [x] Users
-    - [x] Retrieve Authenticated User Information
-    - [x] Retrieve logged User's Id
-- [x] Stores
-    - [x] List all Stores
-    - [x] Retrieve Store
-- [x] Customers
-    - [x] List all Customers
-    - [x] List all Customers from a Store
-    - [x] Retrieve a Customer
-- [ ] Products
-    - [ ] List all products
-    - [ ] Retrieve a Product
-        - [ ] List all Variants of a Product
-        - [ ] Retrieve a Variant
+- [x] Users - v.1.0.0
+    - [x] Retrieve Authenticated User Information - v.1.0.0
+    - [x] Retrieve logged User's Id - v.1.0.0
+- [x] Stores - v.1.2.0
+    - [x] List all Stores - v.1.2.0
+    - [x] Retrieve Store - v.1.2.0
+- [x] Customers - v.1.2.0
+    - [x] List all Customers - v.1.2.0
+    - [x] List all Customers from a Store - v.1.2.0
+    - [x] Retrieve a Customer - v.1.2.0
+- [x] Products - v.1.3.0
+    - [x] List all Products - v.1.3.0
+    - [x] List all Products from a Store - v.1.3.0
+    - [x] Retrieve a Product - v.1.3.0
+        - [x] List all Variants of a Product - v.1.3.0
+        - [x] Retrieve a Product with all their Variants - v.1.3.0
 - [ ] Files
     - [ ] List all Files
     - [ ] Retrieve a File
@@ -145,7 +161,5 @@ $customer = $lemonSqueeze->getCustomer(596510);             // Get the details o
     - [ ] Retrieve a License Key
         - [ ] List all License Key Instances
         - [ ] Retrieve a License Key Instance
-
-Webhooks? TBD
-
-
+- Webhooks? TBD
+- API Documentation (A nice one).

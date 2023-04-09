@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace LemonSqueezy\Entity;
 
+use LemonSqueezy\Enum\ProductStatusEnum;
 use function date_default_timezone_get;
 
 use DateTime;
@@ -88,6 +89,7 @@ abstract class AbstractEntity
                 $this->$property = match ($property) {
                     'status' => match (get_class($this)) {
                         Customer::class => CustomerStatusEnum::from($value),
+                        Product::class => ProductStatusEnum::from($value),
                         default => null,
                     },
                     default => $value,
