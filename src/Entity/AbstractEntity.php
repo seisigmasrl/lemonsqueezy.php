@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace LemonSqueezy\Entity;
 
-use LemonSqueezy\Enum\ProductStatusEnum;
 use function date_default_timezone_get;
 
 use DateTime;
@@ -20,11 +19,14 @@ use Exception;
 use function get_object_vars;
 
 use function implode;
+
 use function is_null;
 use function is_object;
 use function lcfirst;
 
 use LemonSqueezy\Enum\CustomerStatusEnum;
+
+use LemonSqueezy\Enum\ProductStatusEnum;
 
 use LemonSqueezy\Exception\RuntimeException;
 

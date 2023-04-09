@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace LemonSqueezy\API;
 
-use LemonSqueezy\Entity\Customer as CustomerEntity;
 use function array_map;
+
+use LemonSqueezy\Entity\Customer as CustomerEntity;
 
 class Customer extends AbstractApi
 {

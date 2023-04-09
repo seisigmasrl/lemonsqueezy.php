@@ -8,8 +8,6 @@ use function array_map;
 
 use LemonSqueezy\Entity\Product as ProductEntity;
 
-use stdClass;
-
 class Product extends AbstractApi
 {
     public function getAllProducts(): array
