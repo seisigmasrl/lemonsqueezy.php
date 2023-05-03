@@ -24,6 +24,6 @@ class FluentApi
 
     public function get()
     {
-        ray($this->attributes);
+//        ray($this->attributes);
     }
 }
