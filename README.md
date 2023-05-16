@@ -11,11 +11,10 @@ This SDK wraps the Lemon Squeeze API to simplify the service integration with th
 > I started this project with personal and professional motivation. So I'm putting all the effort into finishing the to-do list as fast as possible. To start the hype about the package, I'm opening this from day one and pushing every new endpoint as a new feature release. I include the package core + Users endpoint information for the first release.
 
 # Installation
-This version is only tested for PHP 8.2. To get started, simply require the project using [Composer](https://getcomposer.org/).
-You can install the package via composer like this:
+This package requires PHP 8.2. To get started, install it using [Composer](https://getcomposer.org/) like this:
 
 ```bash
-composer require seisigmasrl/lemonsqueezy.php
+composer require seisigmasrl/lemonsqueezy-php
 ```
 This SDK architecture is highly inspired by the [DigitalOcean Client](https://github.com/DigitalOceanPHP/Client) package by decoupling from any HTTP messaging client by using [PSR-7](https://www.php-fig.org/psr/psr-7/), [PSR-17](https://www.php-fig.org/psr/psr-17/), [PSR-18](https://www.php-fig.org/psr/psr-18/), and [HTTPlug](https://httplug.io/).
 You can visit [HTTPlug for library users](https://docs.php-http.org/en/latest/httplug/users.html) to get more information about installing HTTPlug related packages. This package
