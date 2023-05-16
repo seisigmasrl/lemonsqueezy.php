@@ -1,6 +1,6 @@
 # Lemon Squeezy API client for PHP
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/seisigmasrl/lemonsqueezy-php.svg?style=flat-square)](https://packagist.org/packages/ricardov03/lemonsqueezy-php)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/seisigmasrl/lemonsqueezy-php.svg?style=flat-square)](https://packagist.org/packages/seisigmasrl/lemonsqueezy-php)
 [![Tests](https://img.shields.io/github/actions/workflow/status/seisigmasrl/lemonsqueezy.php/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/seisigmasrl/lemonsqueezy.php/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/seisigmasrl/lemonsqueezy-php.svg?style=flat-square)](https://packagist.org/packages/ricardov03/lemonsqueezy-php)
 
