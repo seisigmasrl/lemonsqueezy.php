@@ -27,5 +27,5 @@ final class Discount extends AbstractEntity
     public string|null $status_formatted;
     public string $created_at;
     public string $updated_at;
-    //public bool $test_mode;
+    public bool $test_mode;
 }

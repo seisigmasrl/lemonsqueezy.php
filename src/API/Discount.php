@@ -43,4 +43,42 @@ class Discount extends AbstractApi
 
         return $discountEntity;
     }
+
+    /**
+     * @param DiscountEntity $discount
+     * @param array<int|string> $variantIds
+     * @return int
+     */
+    public function createDiscount(DiscountEntity $discount, array $variantIds = []): int
+    {
+        $data = [
+            "type" => "discounts",
+            "attributes" => $discount->toArray(),
+            "relationships" => [
+                "store" => [
+                    "data" => [
+                        "type" => "stores",
+                        "id" => (string) $discount->store_id,
+                    ],
+                ],
+            ],
+        ];
+
+        if (! empty($variantIds)) {
+            $variants = [];
+            foreach ($variantIds as $id) {
+                $variants[] = [
+                    "type" => "variants",
+                    "id" => (string) $id,
+                ];
+            }
+            $data["relationships"]["variants"] = [
+                "data" => $variants,
+            ];
+        }
+
+        $object = $this->post('/discounts/', ['data' => $data]);
+
+        return (int) $object->data->id;
+    }
 }
