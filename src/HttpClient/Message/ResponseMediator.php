@@ -53,7 +53,18 @@ final class ResponseMediator
             return null;
         }
 
-        return isset($content->message) && is_string($content->message) ? $content->message : null;
+        if (isset($content->message) && is_string($content->message)) {
+            return $content->message;
+        }
+
+        if (isset($content->errors) && is_array($content->errors)) {
+            $error = array_pop($content->errors);
+            if (isset($error->detail) && is_string($error->detail)) {
+                return $error->detail;
+            }
+        }
+
+        return null;
     }
 
     public static function getPagination(ResponseInterface $response): array
