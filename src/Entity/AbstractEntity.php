@@ -4,13 +4,9 @@ declare(strict_types=1);
 
 namespace LemonSqueezy\Entity;
 
-use LemonSqueezy\Enum\DiscountAmountTypeEnum;
-use LemonSqueezy\Enum\DiscountDurationEnum;
-use LemonSqueezy\Enum\DiscountStatusEnum;
 use function date_default_timezone_get;
 
 use DateTime;
-
 use DateTimeZone;
 
 use function debug_backtrace;
@@ -24,10 +20,16 @@ use function get_object_vars;
 use function implode;
 
 use function is_null;
+
 use function is_object;
+
 use function lcfirst;
 
 use LemonSqueezy\Enum\CustomerStatusEnum;
+use LemonSqueezy\Enum\DiscountAmountTypeEnum;
+use LemonSqueezy\Enum\DiscountDurationEnum;
+
+use LemonSqueezy\Enum\DiscountStatusEnum;
 
 use LemonSqueezy\Enum\ProductStatusEnum;
 
