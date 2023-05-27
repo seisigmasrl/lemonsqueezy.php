@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace LemonSqueezy\Entity;
 
+use LemonSqueezy\Enum\DiscountAmountTypeEnum;
+use LemonSqueezy\Enum\DiscountDurationEnum;
+use LemonSqueezy\Enum\DiscountStatusEnum;
 use function date_default_timezone_get;
 
 use DateTime;
@@ -89,9 +92,16 @@ abstract class AbstractEntity
 
             if (property_exists($this, $property)) {
                 $this->$property = match ($property) {
+                    'amount_type' => match (get_class($this)) {
+                        Discount::class => DiscountAmountTypeEnum::from($value),
+                    },
+                    'duration' => match (get_class($this)) {
+                        Discount::class => DiscountDurationEnum::from($value),
+                    },
                     'status' => match (get_class($this)) {
                         Customer::class => CustomerStatusEnum::from($value),
                         Product::class => ProductStatusEnum::from($value),
+                        Discount::class => DiscountStatusEnum::from($value),
                         default => null,
                     },
                     default => $value,

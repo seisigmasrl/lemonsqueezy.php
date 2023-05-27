@@ -11,6 +11,7 @@ use Http\Client\Common\Plugin\HistoryPlugin;
 use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
 use LemonSqueezy\API\Customer;
+use LemonSqueezy\API\Discount;
 use LemonSqueezy\API\Product;
 use LemonSqueezy\API\Store;
 use LemonSqueezy\API\User;
@@ -71,6 +72,11 @@ class LemonSqueezy
     public function product(): Product
     {
         return new Product($this);
+    }
+
+    public function discount(): Discount
+    {
+        return new Discount($this);
     }
 
     public function authenticate(string $apiKey): void
