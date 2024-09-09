@@ -25,4 +25,5 @@ final class Customer extends AbstractEntity
     public string $created_at;
     public string $updated_at;
     public bool $test_mode;
+    public \stdClass|null $urls;
 }
