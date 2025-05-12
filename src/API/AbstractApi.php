@@ -11,11 +11,8 @@ use Http\Client\Exception;
 use function is_null;
 
 use LemonSqueezy\HttpClient\Message\ResponseMediator;
-
 use LemonSqueezy\HttpClient\Util\JsonObject;
-
 use LemonSqueezy\HttpClient\Util\QueryStringBuilder;
-
 use LemonSqueezy\LemonSqueezy;
 
 use function sprintf;

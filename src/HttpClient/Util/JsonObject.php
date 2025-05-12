@@ -11,7 +11,6 @@ use function json_encode;
 use const JSON_ERROR_NONE;
 
 use function json_last_error;
-
 use function json_last_error_msg;
 
 use LemonSqueezy\Exception\RuntimeException;
