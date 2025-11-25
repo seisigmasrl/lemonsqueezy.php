@@ -7,7 +7,6 @@ namespace LemonSqueezy\Entity;
 use function date_default_timezone_get;
 
 use DateTime;
-
 use DateTimeZone;
 
 use function debug_backtrace;
@@ -17,34 +16,25 @@ use const E_USER_NOTICE;
 use Exception;
 
 use function get_object_vars;
-
 use function implode;
-
 use function is_null;
 use function is_object;
 use function lcfirst;
 
 use LemonSqueezy\Enum\CustomerStatusEnum;
-
 use LemonSqueezy\Enum\ProductStatusEnum;
-
 use LemonSqueezy\Exception\RuntimeException;
 
 use function preg_last_error_msg;
 use function preg_replace_callback;
-
 use function preg_split;
-
 use function property_exists;
 
 use ReflectionClass;
-
 use ReflectionException;
-
 use ReflectionProperty;
 
 use function sprintf;
-
 use function strtolower;
 use function strtoupper;
 use function trigger_error;
